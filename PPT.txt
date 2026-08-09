@@ -1,0 +1,791 @@
++
+BUSINESS PROPOSAL PITCH
+Managed IT, Practice Systems &
+Financial Services
+for Simmons Medical Practice
+Prepared by ABC Partners  ·  Presented to Dr Paul Simmons  ·  26 July 2026
+SIMMONS MEDICAL PRACTICE — DIGITAL TRANSFORMATION PROJECT TEAM
+Team Lead
+Network
+Cybersecurity
+Backend
+UI / UX
+AI Engineering
+
+AGENDA
+Where We're Headed
+1
+ABC Partners
+Who we are, our values, history & the team behind this proposal
+2
+Simmons Medical Practice
+A quick snapshot of the practice, and the problem in its own words
+3
+Root Cause Analysis
+Why these problems exist, not just what they are
+4
+Proposed ICT Solutions
+Six focus areas: network, apps, staff portal, database, security, AI
+5
+Unique Value Propositions
+What every recommendation was measured against
+6
+Accounting Modernisation
+Xero, bank feeds & monthly reconciliation
+7
+Project Management
+Timeline, procurement, budget & next steps
+ABC Partners  ×  Simmons Medical Practice
+Agenda
+02 / 26
+
+ABC PARTNERS
+Who We Are
+Built to deliver exactly this: combined IT and accounting for medical practices
+ABC
+Partners
+IT &
+Network
+Accounting
+Advisory
+N
+Network & Cloud Security Certified
+Recognised certifications across our technical team
+$
+CPA-Qualified Accountants
+In-house, not outsourced
+1
+One Team, Not Two Vendors
+IT and accounting under a single point of contact
++
+Built for Medical Practices
+Already supporting general & allied health clinics
+OUR SLOGAN
+Managed IT & Financial Partnership
+ABC Partners  ×  Simmons Medical Practice
+ABC Partners
+03 / 26
+
+ABC PARTNERS
+The Team Behind This Proposal
+Narottam
+Team Leader
+Client relationship, scope & delivery
+Divya
+Network Engineer
+Infrastructure, connectivity & Wi-Fi
+Siddhanth
+Cybersecurity
+Access control, backup & compliance
+Fatemeh
+Backend Developer
+Data layer, integration & API design
+Parneet
+UI / UX Designer
+Patient & staff experience design
+Kiran
+AI Engineer
+Applied AI & automation features
+ABC Partners  ×  Simmons Medical Practice
+ABC Partners · Team
+04 / 26
+
+SIMMONS MEDICAL PRACTICE
+About Simmons Medical Practice
+24 Grafton Street, Toowong QLD 4066
+3
+Full-time GPs
+1
+Visiting skin specialist (weekly)
+2
+Reception staff (1 FT + 1 PT)
+2
+Nursing staff (1 FT + 1 PT)
+100%
+Bulk-billed patient base
+1 mo
+Until current IT contract ends
+ABC Partners  ×  Simmons Medical Practice
+Simmons Medical Practice
+05 / 26
+
+SIMMONS MEDICAL PRACTICE
+SMP Problem Analysis
+Information provided directly by Dr Simmons
+1
+Ageing, Unreliable Network
+Outages hit reception, consulting rooms and the visiting specialist's room alike — bulk-billing claims can fail mid-consult when the connection drops.
+2
+IT Contract Ending in 1 Month
+The current support arrangement concludes within weeks, leaving a hard deadline to transition without disrupting patients or staff.
+3
+Disconnected Accounting
+Accounting software sits apart from the patient management system, duplicating data entry for billing and reconciliation.
+4
+No Automated Reminders
+The patient management system can't trigger SMS/email reminders, contributing to avoidable missed appointments.
+5
+No Proactive Technology Advice
+Investment decisions are reactive rather than planned — there's no standing forum for forward-looking guidance.
+ABC Partners  ×  Simmons Medical Practice
+Problem Analysis
+06 / 26
+
+ROOT CAUSE ANALYSIS
+Why These Problems Exist
+Fishbone (Ishikawa) diagram, grouped by root cause
+Simmons Medical Practice's Systems Can't Keep Pace With Growth
+Technology
+Ageing network hardware
+Disconnected PMS & accounting software
+No automated patient reminders
+Process
+No structured technology advisory process
+Reactive, not planned, investment
+Manual reconciliation between systems
+People
+Dr Simmons is the sole IT/data administrator
+No second admin or delegated access
+Specialist & wife share his logins
+Vendor & Contract
+Current IT contract ends within 1 month
+No proactive guidance from outgoing provider
+Renewal treated as like-for-like, not a review point
+ABC Partners  ×  Simmons Medical Practice
+Root Cause Analysis
+07 / 26
+
+PROPOSED ICT SOLUTIONS
+Individual Focus Areas
+Each team member owns one layer of the solution
+1
+Networking
+DI
+Divya
+Reliable, segmented infrastructure across every room
+2
+Applications for Clients
+PA
+Parneet
+Patient-facing booking & reminders
+3
+Staff Portal
+PA
+Parneet
+A live dashboard for Dr Simmons
+4
+Database
+FA
+Faye
+The data model behind every system
+5
+Cyber Security
+SI
+Siddhanth
+Access control, backup & compliance
+6
+AI Engineering
+KI
+Kiran
+Workflow automation & scalable applied AI
+ABC Partners  ×  Simmons Medical Practice
+Proposed ICT Solutions
+08 / 26
+
+PROPOSED ICT SOLUTIONS · NETWORKING
+Network Architecture — Physical Layout
+Ground floor, indicative — not to scale, rooms inferred from the brief
+CORRIDOR
+Waiting Room /
+Reception
+Wi-Fi · Admin AP
+Consulting
+Room 1
+Wi-Fi · Clinical AP
+Consulting
+Room 2
+Wi-Fi · Clinical AP
+Consulting
+Room 3
+Wi-Fi · Clinical AP
+Server /
+Comms Cupboard
+UDM-Pro + Switch
+Nurse /
+Treatment Room
+Wi-Fi · Admin AP
+Specialist
+Room (visiting)
+Wi-Fi · Clinical AP
+Dr Simmons'
+Office
+Wi-Fi · Admin AP
+N
+Clinical Zone
+Admin Zone
+Infrastructure
+ABC Partners  ×  Simmons Medical Practice
+Physical Layout
+09 / 26
+
+PROPOSED ICT SOLUTIONS · NETWORKING
+Network Architecture — Network Diagram
+Logical topology — segmented by VLAN, port and IP addressing shown
+Internet (ISP)
+WAN
+UniFi Dream Machine Pro
+Firewall · Router · Controller  ·  10.10.0.1
+Gi0/1
+UniFi Switch Lite 8 PoE
+10.10.40.2
+Gi0/2 · PoE
+UniFi U6-LR
+AP — Clinical Wing  ·  10.10.40.10
+Gi0/3 · PoE
+UniFi U6-LR
+AP — Reception / Admin  ·  10.10.40.11
+Gi0/4
+NAS
+10.10.40.20
+VLAN 40 · Infra
+Offsite Cloud Backup
+VLAN 10 · Clinical  10.10.10.0 /24
+GP 1
+.11
+GP 2
+.12
+GP 3
+.13
+Specialist
+.14
+VLAN 20 · Admin & Reception  10.10.20.0 /24
+Recep. 1
+.11
+Recep. 2
+.12
+Printer
+.13
+Nurse
+.14
+VLAN 30 · Guest Wi-Fi  10.10.30.0 /24
+Patient devices — isolated, no LAN access · DHCP
+ABC Partners  ×  Simmons Medical Practice
+Network Diagram
+10 / 26
+
+PROPOSED ICT SOLUTIONS · APPLICATIONS FOR CLIENTS
+Applications for Clients
+User interface, features & how they benefit the business
+Patient Books Online or Calls Reception
+HotDoc Confirms + Sends SMS / Email Reminder
+Best Practice Bp Premier — Clinical Record Updated
+Automated Recall / Follow-up Scheduled
+FEATURES
+✓  Online booking synced live with Best Practice
+✓  Automated SMS / email appointment reminders
+✓  Two-way confirm / reschedule replies
+✓  Automated recall prompts (care plans, screenings)
+BUSINESS BENEFIT
+✓  Directly targets missed appointments (Pain Point #4)
+✓  Reception spends less time on reminder phone calls
+✓  Higher attendance protects Medicare billing revenue
+9:41
+Simmons Medical Practice
+Reminder: appt with Dr Simmons, Tue 10:30am.
+Reply C to confirm or R to reschedule.
+Confirm
+Reschedule
+HotDoc reminder — illustrative
+ABC Partners  ×  Simmons Medical Practice
+Applications for Clients
+11 / 26
+
+PROPOSED ICT SOLUTIONS · STAFF PORTAL
+Application for Staff Portal
+User interface, features & how they benefit the business
+Practice Dashboard — Dr Simmons
+MATCHES LIVE PROTOTYPE
+1,177
+Appointments (Q1 2026)
+83%
+Attendance Rate
+11.7%
+No-show Rate
+$3,782
+Revenue at Risk — 75 rejected claims
+No-show Rate by Provider
+Claims Breakdown (977 lodged)
+Reminders cut no-shows from 19.7% to 7.1% — 2.8× fewer, when one is sent
+FEATURES
+✓  Live KPI tiles — appointments, no-show rate, recalls due
+✓  Attendance trend and booking-channel reporting
+✓  Reconciliation status between Xero and Best Practice
+✓  Single sign-on scoped to each staff member's role
+BUSINESS BENEFIT
+✓  Gives Dr Simmons the forward-looking view he told us he lacks
+✓  Replaces ad hoc, reactive advice with a standing view of the practice
+✓  Surfaces reconciliation issues before month-end, not after
+ABC Partners  ×  Simmons Medical Practice
+Staff Portal
+12 / 26
+
+PROPOSED ICT SOLUTIONS · UI/UX
+What the Interfaces Look Like
+Screens labelled here are built and demonstrable in the live prototype
+MOBILE — PATIENT APP
+1
+Home
+Upcoming appointment, quick actions, reminder card
+2
+Book
+4-step booking wizard — reason, provider, time, confirm
+3
+Assistant
+AI chat — books, reschedules, answers FAQs, escalates
+4
+Profile
+Details, notification preferences, appointment history
+BROWSER — STAFF & ADMIN PORTAL
+1
+Patient Records
+Role-scoped view, specialist segregation enforced
+2
+Results Inbox
+Pathology, radiology & referrals, flagged for review
+3
+Imaging & Files
+Tiered object storage, retention-period aware
+4
+Claims & Billing
+Medicare reconciliation, rejected-claim flags
+5
+Reports
+KPIs and the full analytics dashboard (admin roles)
+6
+Security & System
+Controls, backup status, access log
+7
+Users & Access
+Roles and permissions administration
+Both apps are built and clickable in the live prototype — ask to see it
+ABC Partners  ×  Simmons Medical Practice
+UI / UX
+13 / 26
+
+PROPOSED ICT SOLUTIONS · DATABASE
+SMP Database
+Features and strategies behind every system
+Entity-relationship diagram designed by the project's Backend Developer (Faye)
+FEATURES & STRATEGIES
+✓  Integration Middleware / API Layer — Slide 12 (Staff Portal)
+✓  Role-based access (is_partner / is_segregated) — Slide 15 (Access & Identity)
+✓  Medicare billing assist (mbs_item) — Slide 18 (AI Engineering)
+✓  Encrypted imaging archive (DOCUMENT.storage_uri)
+NEW: GP COST-SHARING & REIMBURSEMENT
+Dr Simmons pays shared equipment and consumable costs upfront (SHARED_COST), then COST_ALLOCATION splits and tracks what each GP owes for reimbursement — directly addressing a requirement from the original practice brief.
+ABC Partners  ×  Simmons Medical Practice
+SMP Database
+14 / 26
+
+PROPOSED ICT SOLUTIONS · CYBER SECURITY
+Access Control & Identity
+Least-privilege, role-based — enforced by the database, not the screen
+ROLE
+Patient
+Records
+Results &
+Imaging
+Claims &
+Billing
+Reports
+Security &
+Users
+Dr Simmons
+Owner — full admin
+●
+●
+●
+●
+●
+Helen Simmons
+Delegated admin
+●
+●
+◐
+●
+◐
+GP / Clinician
+e.g. Dr James Chen
+●
+●
+◐
+◐
+–
+Nurse
+e.g. Mary Kelly
+●
+◐
+–
+–
+–
+Reception
+e.g. Sophie Nguyen
+◐
+–
+–
+–
+–
+Visiting Specialist
+Segregated — own patients only
+◑
+◑
+◐
+–
+–
+●
+Full access
+◐
+Read only
+◑
+Own patients only
+–
+No access
+Access is enforced by the database itself, not the screen — a locked module means the query never returns that data for the signed-in role.
+ABC Partners  ×  Simmons Medical Practice
+Access & Identity
+15 / 26
+
+PROPOSED ICT SOLUTIONS · CYBER SECURITY
+Backup, Continuity & Data Protection
+Nine controls, running today in the prototype's security module
+✓
+Hosting
+Cloud, Australian region
+✓
+Encryption
+At rest and in transit
+✓
+Backups
+3-2-1, restore-tested regularly
+✓
+Redundancy
+Automatic failover active
+✓
+Ransomware Protection
+Endpoint plus immutable backups
+✓
+Patching
+OS and clinical software current
+✓
+Remote Access
+Multi-factor, no local copies
+✓
+Secure Printing
+Badge release, no unclaimed prints
+✓
+Breach Monitoring
+Access logging and alerts, breach-scheme ready
+Materially reduced ransomware exposure vs. self-managed IT — no single point of failure, no single point of control.
+ABC Partners  ×  Simmons Medical Practice
+Backup & Continuity
+16 / 26
+
+PROPOSED ICT SOLUTIONS · CYBER SECURITY
+Compliance & Governance
+What the practice is obligated to meet, and how the system meets it
+7-Year Record Retention
+25 years for minors — Qld Health / RANZCP guidance
+Notifiable Data Breaches
+Applies regardless of turnover — health service providers are always covered (OAIC)
+Australian Data Residency
+Patient data never leaves Australian jurisdiction
+AUDIT LOG — EVERY VIEW RECORDED
+09:41:03  Dr Paul Simmons     opened module: security
+09:41:47  Helen Simmons       opened record: Noah Brown
+09:42:15  Dr James Chen       opened record: Olivia Taylor
+09:43:02  Sophie Nguyen       opened module: patients
+Every view is logged against the signed-in user — not just who has access, but who looked, when.
+“Access is enforced by the database itself, not the screen — a locked module means the query never returns that data for the signed-in role.”
+ABC Partners  ×  Simmons Medical Practice
+Compliance & Governance
+17 / 26
+
+PROPOSED ICT SOLUTIONS · AI ENGINEERING
+AI Engineering
+Workflow, Automation & Scalability — layered on the data foundation
+S
+Ambient Clinical Scribing
+Buy-and-integrate transcription drafts consult notes for GP review.
+P
+No-show Prediction
+Scores upcoming bookings against attendance history to target reminder follow-up.
+$
+Billing & Coding Assistance
+Flags likely missed Medicare items before claims are submitted.
+?
+Patient Triage / FAQ Bot
+Handles common booking and practice questions, escalating anything clinical.
+R
+Chronic Disease Recall Automation
+Prompts overdue recalls (e.g. care plans, screenings) automatically.
+ⓘ  Human-in-the-loop by design: every AI output is reviewed by clinical or admin staff before it reaches a patient record or claim.
+APPLIED THROUGH THREE LENSES
+Workflow
+Sits inside existing HotDoc / Best Practice screens — no new system for staff to learn
+Automation
+Reminders, recalls and no-show scoring run on a schedule, not on staff initiative
+Scalability
+Same data foundation supports more practitioners or a second site without a redesign
+ABC Partners  ×  Simmons Medical Practice
+AI Engineering
+18 / 26
+
+PROPOSED ICT SOLUTIONS · AI ENGINEERING
+AI Virtual Patient Assistant
+Beyond a chatbot — an intelligent digital front desk for Simmons Medical Practice
+Patient
+AI Virtual Patient Assistant
+Answers Common Enquiries
+Books Appointments
+Reschedules / Cancels
+Sends Reminders
+Clinic Information
+Escalates Complex Cases
+Patient Management System
+Reception / Clinical Staff
+KEY BENEFITS
+✓  Available 24/7
+✓  Reduces receptionist workload
+✓  Faster patient support
+✓  Improves appointment management
+✓  Integrates with existing systems
+Presenter cue: The assistant handles routine administrative tasks so staff can focus on patients requiring personal support.
+ABC Partners  ×  Simmons Medical Practice
+AI Virtual Assistant
+19 / 26
+
+PROPOSED ICT SOLUTIONS · AI ENGINEERING
+AI Engineering Roadmap
+✓
+Live Prototype
+✓  AI Virtual Patient Assistant
+✓  Appointment Booking
+✓  FAQs & Patient Enquiries
+✓  Appointment Reminders
+✓  Care Navigation
+↑
+Future Enhancements
+→  Ambient Clinical Scribing
+→  Billing & Coding Assistance
+→  No-show Prediction
+→  Chronic Disease Recall Automation
+Responsible AI: Every AI-generated recommendation is reviewed by clinic staff before becoming part of patient records or administrative processes.
+ABC Partners  ×  Simmons Medical Practice
+AI Roadmap
+20 / 26
+
+UNIQUE VALUE PROPOSITIONS
+What Every Recommendation Was Measured Against
+Client-Focused
+Booking, reminders and recalls designed around the patient experience
+Secure
+Role-based access, encryption and 3-2-1 backup by design
+Productive
+Automation removes duplicate admin work across systems
+Reliable
+Segmented, monitored network with redundant backup
+Integrated
+One data model behind every system — no duplicate entry
+Compliant
+Meets Notifiable Data Breaches and health record retention obligations
+Competitive Advantage
+One point of contact for IT and accounting — no separate vendors working in isolation.
+Team Qualifications
+Network & cloud security certifications, plus CPA-qualified accounting staff.
+Track Record
+Reduced non-attendance and consolidated reporting in comparable practice transitions.
+ABC Partners  ×  Simmons Medical Practice
+Unique Value Propositions
+21 / 26
+
+SUPPORTING DETAIL
+Accounting Modernisation
+Bank Feeds
+(Direct Connection)
+Xero
+(Central Ledger)
+Monthly Reconciliation
+(by ABC Partners)
+Single Current View
+Billing data exported from Best Practice feeds into Xero — no duplicate entry between clinical and financial records.
+Managed Reconciliation
+ABC Partners runs the monthly reconciliation routine, not practice staff.
+Reconciliation Target
+Monthly reconciliation completed within 2 business days of month-end (service commitment).
+ABC Partners  ×  Simmons Medical Practice
+Accounting
+22 / 26
+
+PROJECT MANAGEMENT
+Timeline & Procurement
+12-week program — 3 months to go-live
+Month 1
+Month 2
+Month 3
+W1
+W2
+W3
+W4
+W5
+W6
+W7
+W8
+W9
+W10
+W11
+W12
+Procurement — hardware & licensing
+W1–W2
+Network install & configuration
+W2–W4
+Network testing & handover
+W4
+Bp Premier + HotDoc setup & config
+W4–W6
+Parallel run (old + new PMS)
+W6–W8
+Staff training
+W7–W8
+Go-live cutover (PMS / HotDoc)
+W8
+Xero setup, migration & reconciliation
+W9–W11
+First Quarterly Review
+Procurement lead time is the first task — network hardware and licensing ordered in Week 1.
+ABC Partners  ×  Simmons Medical Practice
+Timeline & Procurement
+23 / 26
+
+PROJECT MANAGEMENT
+Investment — Researched, Itemised
+NETWORK HARDWARE (ONE-OFF)
+Item
+Qty
+Cost
+UniFi Dream Machine Pro (UDM-Pro) — gateway / firewall / controller
+1
+$539
+UniFi Switch Lite 8 PoE
+1
+$276
+UniFi U6-LR Wi-Fi 6 access point
+2 × $276
+$552
+Cabling, mounts & contingency (~10%)
+—
+$137
+Hardware Subtotal
+$1,504
+IMPLEMENTATION LABOUR (ONE-OFF)
+Scope
+Est. Hours
+Cost
+Network install, config & testing (Month 1)
+16 hrs
+$3,520
+Bp Premier + HotDoc migration & staff training (Month 2)
+24 hrs
+$5,280
+Xero setup, data migration & reconciliation (Month 3)
+12 hrs
+$2,640
+Labour Subtotal
+$11,440
+Scoped at a market rate of $190–270/hr for AU network & systems consulting (mid-point $220/hr used); hours are a planning estimate, confirmed after the site visit.
+One-off Implementation Total:  $12,944
+ANNUAL RETAINER (RECURRING MONTHLY)
+Service
+Scope
+$ / Month
+Best Practice Bp Premier — licensing
+3 FT + 1 visiting practitioner
+$446.83
+HotDoc — patient engagement & reminders
+4 active practitioners
+$341.20
+Xero Comprehensive — incl. payroll
+1 organisation
+$107.00
+Cloud backup — AU-hosted (server + 2 devices)
+3 endpoints
+$52.00
+Managed IT retainer — helpdesk, patching, endpoint security & monitoring
+8 user seats × $195
+$1,560.00
+Monthly Subtotal
+$2,507.03
+8 user seats = 3 GPs + 1 visiting specialist + 1 FT/1 PT reception + 1 FT/1 PT nursing (incl. Dr Simmons's wife's hours), across ~7 shared workstations.
+OPTIONAL ADD-ON SERVICES
+•  Annual equipment test & tag (~35 items)
+$272.50 / yr
+•  Annual network security audit (scoped, entry-level)
+from $5,000 / yr
+Annual Retainer Total:  $30,084 / yr
+First-Year Investment (Implementation + 12-Month Retainer):  $43,028  ex-GST
+ABC Partners  ×  Simmons Medical Practice
+Investment
+24 / 26
+
+PROJECT MANAGEMENT
+Conclusion & Next Steps
+Changing IT and financial systems involves more than technology — it depends on trust between the practice and the people supporting it. We'd welcome the opportunity to support Simmons Medical Practice through this transition and beyond.
+1
+Confirm scope on a short follow-up call with Dr Simmons
+2
+Site visit to finalise pricing (Appendix A) and sign-off
+3
+Begin Month 1 — network upgrade — ahead of contract end
+GET IN TOUCH
+ABC Partners
+Level 3, 88 Eagle Street, Brisbane QLD 4000
+(07) 3000 1122
+partners@abcpartners.com.au
+Proposal submitted to:
+Dr Paul Simmons
+Simmons Medical Practice — 24 Grafton Street, Toowong QLD 4066
+ABC Partners  ×  Simmons Medical Practice
+Next Steps
+25 / 26
+
+APPENDIX
+Sources & References
+Every researched figure in this deck traces back to one of the sources below
+Primary source: Business Proposal — Simmons Medical Practice, submitted 26 July 2026 (ABC Partners). This deck is the accompanying pitch presentation.
+VENDOR & PRODUCT PRICING
+Best Practice Software — Bp Premier pricing
+bpsoftware.net/premier-pricing
+HotDoc — practice pricing
+support.hotdoc.com.au
+Xero — AU pricing plans
+xero.com/au/pricing-plans
+Ubiquiti UniFi hardware — AU retail
+thetechgeeks.com, mrwifi.com.au, ozbargain.com.au
+MARKET RESEARCH — BUDGET FIGURES
+AU-hosted cloud backup pricing
+i360cloud.net.au/cloudbackups
+Managed IT services pricing guide (AU)
+kmtech.com.au, stanfieldit.com, valont.com.au
+IT consulting hourly rates (AU)
+aalpha.net, sbaas.com.au
+Penetration testing / security audit cost (AU)
+arankish.com.au, cyberpulse.com.au
+Test & tag pricing (AU)
+gotestandtag.com.au, thelocalguystestandtag.com.au
+COMPLIANCE REFERENCES
+Health record retention — Qld Health / RANZCP
+health.qld.gov.au, ranzcp.org
+Notifiable Data Breaches scheme — OAIC
+oaic.gov.au
+ABC Partners  ×  Simmons Medical Practice
+Sources
+26 / 26

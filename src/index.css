@@ -1,0 +1,204 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* Brand — teal (primary) */
+  --color-teal-50: #f0f7f5;
+  --color-teal-100: #dceee8;
+  --color-teal-200: #b9ddd1;
+  --color-teal-300: #8cc4b5;
+  --color-teal-400: #5ca695;
+  --color-teal-500: #3d8a78;
+  --color-teal-600: #2e6f60;
+  --color-teal-700: #275a4f;
+  --color-teal-800: #1f4740;
+  --color-teal-900: #17332e;
+  --color-teal-950: #0e211d;
+
+  /* Brand — terracotta (accent) */
+  --color-terracotta-50: #fdf3ee;
+  --color-terracotta-100: #fbe4d8;
+  --color-terracotta-200: #f5c6a9;
+  --color-terracotta-300: #eda378;
+  --color-terracotta-400: #e3814f;
+  --color-terracotta-500: #d96a34;
+  --color-terracotta-600: #bb5527;
+  --color-terracotta-700: #96431f;
+  --color-terracotta-800: #713219;
+  --color-terracotta-900: #4c2211;
+
+  /* Brand — amber (tertiary accent) */
+  --color-amber-50: #fdf6e8;
+  --color-amber-100: #faeac4;
+  --color-amber-200: #f3d488;
+  --color-amber-300: #eabb52;
+  --color-amber-400: #dfa233;
+  --color-amber-500: #c9891f;
+  --color-amber-600: #a66c16;
+
+  /* Neutral — warm cream surfaces */
+  --color-cream-25: #fefdfb;
+  --color-cream-50: #fbf7ef;
+  --color-cream-100: #f6efe1;
+  --color-cream-200: #ede0c8;
+  --color-cream-300: #dfcba6;
+
+  /* Neutral — warm ink text */
+  --color-ink-900: #211c16;
+  --color-ink-800: #2e2720;
+  --color-ink-700: #453b30;
+  --color-ink-600: #5c5145;
+  --color-ink-500: #7a6f60;
+  --color-ink-400: #9a8f7f;
+  --color-ink-300: #c2b8a8;
+  --color-ink-200: #e1d9cb;
+
+  /* Chart — validated categorical (fixed order, never cycled) */
+  --color-chart-1: #2a78d6;
+  --color-chart-2: #eb6834;
+  --color-chart-3: #1baf7a;
+  --color-chart-4: #eda100;
+  --color-chart-5: #e87ba4;
+  --color-chart-6: #008300;
+  --color-chart-7: #4a3aa7;
+  --color-chart-8: #e34948;
+
+  /* Chart — sequential (blue) */
+  --color-seq-100: #cde2fb;
+  --color-seq-200: #9ec5f4;
+  --color-seq-300: #6da7ec;
+  --color-seq-400: #3987e5;
+  --color-seq-500: #256abf;
+  --color-seq-600: #184f95;
+  --color-seq-700: #0d366b;
+
+  /* Chart — status (fixed, reserved meaning) */
+  --color-status-good: #0ca30c;
+  --color-status-good-text: #006300;
+  --color-status-warning: #fab219;
+  --color-status-serious: #ec835a;
+  --color-status-critical: #d03b3b;
+
+  /* Chart chrome */
+  --color-chart-surface: #fcfcfb;
+  --color-chart-grid: #e1e0d9;
+  --color-chart-axis: #c3c2b7;
+  --color-chart-muted: #898781;
+
+  --shadow-soft: 0 1px 2px rgba(33, 28, 22, 0.04), 0 4px 16px rgba(33, 28, 22, 0.06);
+  --shadow-card: 0 1px 3px rgba(33, 28, 22, 0.06), 0 8px 24px -4px rgba(33, 28, 22, 0.08);
+  --shadow-lifted: 0 12px 40px -8px rgba(33, 28, 22, 0.18);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-ink-200);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-cream-50);
+    color: var(--color-ink-900);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-teal-200);
+    color: var(--color-teal-900);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-ink-300);
+    border-radius: 999px;
+    border: 2px solid var(--color-cream-50);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-ink-400);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-teal-500);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(61, 138, 120, 0.45);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(61, 138, 120, 0);
+  }
+}
+.animate-pulse-ring {
+  animation: pulse-ring 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes dash-flow {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+.animate-dash-flow {
+  stroke-dasharray: 4 6;
+  animation: dash-flow 1s linear infinite;
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.animate-float {
+  animation: float-y 6s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+.animate-shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 2.2s linear infinite;
+}
