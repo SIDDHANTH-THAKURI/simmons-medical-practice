@@ -13,6 +13,7 @@ import PatientSignup from "@/pages/auth/PatientSignup";
 import StaffLogin from "@/pages/auth/StaffLogin";
 
 const SystemArchitecture = lazy(() => import("@/pages/SystemArchitecture"));
+const DemoScript = lazy(() => import("@/pages/DemoScript"));
 
 const PatientHome = lazy(() => import("@/pages/patient/PatientHome"));
 const BookAppointment = lazy(() => import("@/pages/patient/BookAppointment"));
@@ -48,6 +49,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/system-architecture" element={<SystemArchitecture />} />
+          <Route path="/demoscript" element={<DemoScript />} />
 
           <Route path="/portal" element={<PortalChooser />} />
           <Route path="/patient/login" element={<PatientLogin />} />
